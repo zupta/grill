@@ -1,43 +1,31 @@
-~~~
-~~ #%L
-~~ Grill
-~~ %%
-~~ Copyright (C) 2014 Inmobi
-~~ %%
-~~ Licensed under the Apache License, Version 2.0 (the "License");
-~~ you may not use this file except in compliance with the License.
-~~ You may obtain a copy of the License at
-~~ 
-~~      http://www.apache.org/licenses/LICENSE-2.0
-~~ 
-~~ Unless required by applicable law or agreed to in writing, software
-~~ distributed under the License is distributed on an "AS IS" BASIS,
-~~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-~~ See the License for the specific language governing permissions and
-~~ limitations under the License.
-~~ #L%
-~~~
-Grill client configuration
+~~
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+~~
+
+Lens client configuration
 
 ===
 
 *--+--+---+--+
 |<<No.>>|<<Property Name>>|<<Default Value>>|<<Description>>|
 *--+--+---+--+
-|1|grill.base.path|grillapi|default grill server base path|
+|1|lens.client.dbname|default|Default lens database|
 *--+--+---+--+
-|2|grill.dbname|default|Default grill database|
-*--+--+---+--+
-|3|grill.host|localhost|Grill server hostname|
-*--+--+---+--+
-|4|grill.metastore.resource.path|metastore|resource path to query webservice|
-*--+--+---+--+
-|5|grill.port|9999|Default Grill server port|
-*--+--+---+--+
-|6|grill.query.resource.path|queryapi|resource path to query webservice|
-*--+--+---+--+
-|7|grill.session.resource.path|session|resource path to session webservice|
-*--+--+---+--+
-|8|grill.user.name|anonymous|Grill client user name|
+|2|lens.client.user.name|anonymous|Lens client user name|
 *--+--+---+--+
 The configuration parameters and their default values

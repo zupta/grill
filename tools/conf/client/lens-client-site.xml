@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>lens.query.enable.persistent.resultset.indriver</name>
+    <value>false</value>
+    <description>Whether to enable persistent resultset on the driver for queries</description>
+  </property>
+  <property>
+    <name>lens.cube.query.disable.auto.join</name>
+    <value>false</value>
+    <description>Tells whether to disable automatic resolution of join conditions between tables involved.
+ To enable automatic resolution, this value should be false.</description>
+  </property>
+  <property>
+    <name>lens.cube.query.disable.aggregate.resolver</name>
+    <value>false</value>
+    <description>Tells whether to disable automatic resolution of aggregations for measures in a cube.
+ To enable automatic resolution, this value should be false.</description>
+  </property>
+
+  <property>
+    <name>lens.cube.query.promote.groupby.toselect</name>
+    <value>true</value>
+    <description>Tells whether to promote group by clauses to be promoted to select expressions if they are already not projected.
+ To enable automatic promotion, this value should be true.</description>
+  </property>
+
+  <property>
+    <name>lens.cube.query.promote.select.togroupby</name>
+    <value>true</value>
+    <description>Tells whether to promote select expressions which is not inside any aggregate, to be promoted to groupby clauses, if they are already not part of groupby clauses.
+ To enable automatic promotion, this value should be true.</description>
+  </property>
+
+  <property>
+    <name>lens.cube.query.fail.if.data.partial</name>
+    <value>true</value>
+    <description>Whether to fail the query of data is partial</description>
+  </property>
+
+</configuration>

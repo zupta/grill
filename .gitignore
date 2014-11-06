@@ -1,14 +1,13 @@
 #java specific
 *.class
 query_logs/
-
 ## generic files to ignore
 *~
 *.lock
 *.swp
 *.out
 *.log
-
+.checkstyle
 # Eclipse
 .classpath
 .project

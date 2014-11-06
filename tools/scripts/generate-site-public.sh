@@ -1,4 +1,23 @@
 #!/bin/sh
+#
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+
 
 die() {
     echo "$1"
@@ -6,9 +25,9 @@ die() {
 }
 
 REPO=git@github.com:InMobi/grill.git
-TMP=/tmp/grill-site-stage
+TMP=/tmp/lens-site-stage
 STAGE=`pwd`/target/staging
-REST_DIR=`pwd`/grill-server/target/site/wsdocs
+REST_DIR=`pwd`/lens-server/target/site/wsdocs
 IMAGES_DIR=`pwd`/src/site/apt/figures
 LOGO_FILE=`pwd`/grill-logo.png
 VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)' || die "unable to get version")
@@ -16,11 +35,11 @@ VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpres
 
 echo "Starting generate-site"
 CURR_BRANCH=`git branch | sed -n '/\* /s///p'`
-echo "Running site in current grill branch" $CURR_BRANCH
+echo "Running site in current lens branch" $CURR_BRANCH
 mvn clean test -Dtest=TestGenerateConfigDoc || die "Unable to generate config docs"
 mvn install -DskipTests
 mvn clean site site:stage -Ddependency.locations.enabled=false -Ddependency.details.enabled=false || die "unable to generate site"
-cd grill-server
+cd lens-server
 mvn enunciate:docs
 cd ..
 echo "Site gen complete"
